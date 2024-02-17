@@ -49,3 +49,11 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
+- task: ACRTask@0
+  inputs:
+    azureSubscription: 'Azure subscription 1(1f4920fb-b267-454b-b530-b917bad02f96)'
+    azureContainerRegistry: 'azureuserdd'
+    containerRepository: 'SimpleAPI'
+    contextType: 'file'
+    contextPath: '$(System.DefaultWorkingDirectory)'
+    dockerfileOrTaskFile: 'Dockerfile'
