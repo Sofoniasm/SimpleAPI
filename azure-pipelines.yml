@@ -51,11 +51,7 @@ steps:
   displayName: 'publish artifacts'
 - task: AzureRmWebAppDeployment@4
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(1f4920fb-b267-454b-b530-b917bad02f96)'
-    appType: 'apiApp'
-    WebAppName: 'sofonias5245'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'HelloWorldAPI'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war.'
+    ConnectionType: 'PublishProfile'
+    PublishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml'
+    PublishProfilePassword: 'Testing1@2'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
